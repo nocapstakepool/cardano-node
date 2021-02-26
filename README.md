@@ -20,9 +20,9 @@ So today, we will be building up a Cardano Node on AWS.
 5. Free Udemy Course on Marlowe (smart contract non-programming): https://www.udemy.com/course/marlowe-programming-language/
 
 ## Additional Resources
-- Harden your Ubuntu Servers: https://www.lifewire.com/harden-ubuntu-server-security-4178243
-- Harden your Ubuntu Servers 2: https://gist.github.com/lokhman/cc716d2e2d373dd696b2d9264c0287a3
-- EDEN Pool's Useful Youtube Videos: https://www.youtube.com/channel/UCZvLM73pSD3aSJv6_Egf8Fg
+1. Harden your Ubuntu Servers: https://www.lifewire.com/harden-ubuntu-server-security-4178243
+2. Harden your Ubuntu Servers 2: https://gist.github.com/lokhman/cc716d2e2d373dd696b2d9264c0287a3
+3. EDEN Pool's Useful Youtube Videos: https://www.youtube.com/channel/UCZvLM73pSD3aSJv6_Egf8Fg
 
 ---
 
