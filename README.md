@@ -2,7 +2,7 @@
 We are going to build a Cardano Node! 
 
 ## What is Cardano?
-Cardano ($ADA) is a 3rd-generation cryptocurrency (similar to Bitcoin and Ethereum, but different in many ways) that aims to be the most decentralized cryptocurrency that will benefit the world. Cryptocurrencies are all racing to bring the revolutionary technology of blockchain to the real world. A blockchain is simply a ledger (or list of transactions) that are powered by a bunch of connected computers. The blockchain is decentralized (not owned by a single entity/person) and powered by many (connected nodes/computers). The Bitcoin/Ethereum network is powered by a bunch of computers connected together.
+Cardano ($ADA) is a 3rd-generation cryptocurrency (similar to Bitcoin and Ethereum, but different in many ways) that aims to be the most decentralized cryptocurrency that will benefit the world. Cryptocurrencies are all racing to bring the revolutionary technology of blockchain to the real world. A blockchain is simply a ledger (or list of transactions) that is powered by a bunch of connected computers. The blockchain is decentralized (not owned by a single entity/person) and powered by many (connected nodes/computers). The Bitcoin/Ethereum network is powered by a bunch of computers connected together.
 
 The Bitcoin and Ethereum blockchain operates as Proof-of-Work while the Cardano blockchain operates as Proof-of-Stake. 
 
