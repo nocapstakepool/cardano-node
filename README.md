@@ -60,6 +60,7 @@ sudo ufw status
 ```
 
 ### Create a non-root user with sudo access (pre-req)
+- Create the user
 ```
 sudo su  
 adduser <username>  
@@ -67,10 +68,13 @@ adduser <username>
 <password>  
 <enter to leave defaults for user info>  
 y  
+```
+- Give that user the power of sudo
+```
 usermod -aG sudo <username>  
 su - <username>  
 <password if first time using this user>  
 ```
 
-# Pre-requisites (prereqs.sh) - Creating our file structure
+### Pre-requisites (prereqs.sh) - Creating our file structure
 
