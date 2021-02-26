@@ -26,7 +26,7 @@ So today, we will be building up a Cardano Node on AWS.
 
 # Connect into your Cardano Node
 1. You can choose whatever SSH method you like, I am running on Windows and my command line has SSH configured. Let's SSH into our Ubuntu Server using the server's public IP address and our generate private key (mykeypair.pem) as ubuntu (default AWS account user for Ubuntu)  
-- ssh ubuntu@12.345.678.90 -i mykeypair.pem  
+ssh ubuntu@12.345.678.90 -i mykeypair.pem  
 yes  
 2. Once connected, lets update the server!  
 sudo apt-get update
