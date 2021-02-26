@@ -50,7 +50,7 @@ sudo ufw allow proto tcp from any to any port 22
 ```
 - Allow node port  
 ```
-sudo ufw allow proto tcp from any to any port 6001  
+sudo ufw allow proto tcp from any to any port 6007  
 ```
 - Activate the firewall  
 ```
