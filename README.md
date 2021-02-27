@@ -28,7 +28,7 @@ So today, we will be building up a Cardano Node on AWS.
 
 ### Create an EC2 Instance on AWS
 - Create an EC2 instance with Ubuntu (I used Ubuntu Server 20.04 LMS)
-- Select t2.medium and for 24-30 GB for EBS Storage
+- Select t2.medium and 24-30 GB for EBS Storage
 - We can leave default VPC and Security Group for now (will be a security risk if not addressed later since it is open to the world!)
 - Tag it! (i.e., Name, CardanoNode) 
 - Save your Private Key (i.e., mykeypair.pem) so that you can connect to it later
@@ -85,4 +85,37 @@ su - <username>
 ```
 
 ### Pre-requisites (prereqs.sh) - Creating our file structure
+- Create a tmp directory, change to that tmp directory, install CURL, download the prereq.sh script, and then change it's permissions.
+```
+mkdir "$HOME/tmp"; cd "$HOME/tmp"
+curl -sS -o prereqs.sh https://raw.githubusercontent.com/cardano-community/guild-operators/master/scripts/cnode-helper-scripts/prereqs.sh
+chmod 755 prereqs.sh
+```
+- You can view and familiarize yourself with the syntax of the prereq script before proceeding:
+```
+./prereqs.sh -h
+```
+```
+Usage: prereqs.sh [-f] [-s] [-i] [-l] [-c] [-w] [-p] [-b <branch>] [-n <mainnet|testnet|launchpad|guild|staging>] [-t <name>] [-m <seconds>]
+Install pre-requisites for building cardano node and using CNTools
 
+-f    Force overwrite of all files including normally saved user config sections in env, cnode.sh and gLiveView.sh
+      topology.json, config.json and genesis files normally saved will also be overwritten
+-s    Skip installing OS level dependencies (Default: will check and install any missing OS level prerequisites)
+-n    Connect to specified network instead of mainnet network (Default: connect to cardano mainnet network)
+      eg: -n testnet
+-t    Alternate name for top level folder, non alpha-numeric chars will be replaced with underscore (Default: cnode)
+-m    Maximum time in seconds that you allow the file download operation to take before aborting (Default: 60s)
+-l    Use IOG fork of libsodium - Recommended as per IOG instructions (Default: system build)
+-c    Install/Upgrade and build CNCLI with RUST
+-w    Install/Upgrade Vacuumlabs cardano-hw-cli for hardware wallet support
+-p    Install/Upgrade PostgREST binary to query postgres DB as a service
+-b    Use alternate branch of scripts to download - only recommended for testing/development (Default: master)
+-i    Interactive mode (Default: silent mode)
+```
+- Run the prereqs.sh script and bashrc!
+```
+./prereqs.sh
+. "${HOME}/.bashrc"
+```
+- Now we wait for the prereqs script to run (may take some time - so feel free to go grab a drink)
