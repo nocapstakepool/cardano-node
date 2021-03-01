@@ -119,3 +119,9 @@ Install pre-requisites for building cardano node and using CNTools
 . "${HOME}/.bashrc"
 ```
 - Now we wait for the prereqs script to run (may take some time - so feel free to go grab a drink)
+
+---
+
+### Setting up your Cardano Node
+
+tbd.
