@@ -123,5 +123,17 @@ Install pre-requisites for building cardano node and using CNTools
 ---
 
 ### Setting up your Cardano Node
+- Let's clone the Cardano Node repository and go to the folder
+```
+cd ~/git
+git clone https://github.com/input-output-hk/cardano-node
+cd cardano-node
+```
+- Let's make sure we are up to date with the repository
+```
+git fetch --tags --all
+# Replace tag against checkout if you do not want to build the latest released version
+git pull
+git checkout $(curl -s https://api.github.com/repos/input-output-hk/cardano-node/releases/latest | jq -r .tag_name)
+```
 
-tbd.
