@@ -74,8 +74,8 @@ sudo su
 adduser <username>  
 <password>  
 <password>  
-<enter to leave defaults for user info>  
-y  
+<ENTER to leave defaults for user info>  
+<Y to continue>
 ```
 - Give that user the power of sudo
 ```
@@ -146,4 +146,41 @@ git status
 ```
 $CNODE_HOME/scripts/cabal-build-all.sh -o
 ```
-
+- This will probably take some time to run (30+ minutes). Feel free to take a short break while it runs.
+- Once completed, we can check the cardano-cli (command line interface) and the cardano-node versions
+```
+cardano-cli version
+cardano-node version
+```
+- Before continuing, please make sure to edit the CNODE_PORT to match what we've set earlier (i.e., port 6001)
+```
+nano $CNODE_HOME/scripts/env
+```
+```
+CNODE_PORT=6001
+POOL_NAME="MyFirstPool"
+<CTRL+X to exit editor>
+<Y to save changes>
+<ENTER to save changes>
+```
+- Go to the cnode/scripts directory and run the cnode.sh script to sync the node to the blockchain! We will be using tmux to split the windows so we have more screen estate!
+```
+cd $CNODE_HOME/scripts
+```
+```
+tmux
+./cnode.sh
+# Listening on http://127.0.0.1:<port>
+```
+- You can read up more about tmux here: 
+- https://www.hamvocke.com/blog/a-quick-and-easy-guide-to-tmux/
+- Since we have no view, let's open a new window and run the gLiveView script
+```
+<CTRL+B>
+<%>
+# That will split the panes in half
+<CTRL+B>
+<Press the right key to move to the right pane>
+./gLiveView.sh
+```
+- Now we have to our node sync with the entire blockchain (May take a long time depending how large the blockchain is already - a few hours to a day or longer)
