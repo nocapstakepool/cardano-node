@@ -132,8 +132,18 @@ cd cardano-node
 - Let's make sure we are up to date with the repository
 ```
 git fetch --tags --all
-# Replace tag against checkout if you do not want to build the latest released version
 git pull
 git checkout $(curl -s https://api.github.com/repos/input-output-hk/cardano-node/releases/latest | jq -r .tag_name)
+```
+- We are in a deteached HEAD state, let's run a git status to confirm
+```
+git status
+# It should return the following:
+# HEAD detached at <version number>
+# nothing to commit, working tree clean
+```
+- Time to build the Cardano Node using the cabal-build-all.sh script
+```
+$CNODE_HOME/scripts/cabal-build-all.sh -o
 ```
 
