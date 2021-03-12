@@ -25,9 +25,9 @@ So today, we will be building up a Cardano Node on AWS.
 3. EDEN Pool's Useful Youtube Videos: https://www.youtube.com/channel/UCZvLM73pSD3aSJv6_Egf8Fg
 
 ---
-## Note: You will need the at least 2-3 servers set up:
+## Note: You will need the at least 2-3 servers set up
 - 1 Producer Node
-- 2 Relay Nodes
+- 1-2 Relay Nodes
 ---
 
 ### Create an EC2 Instance on AWS
