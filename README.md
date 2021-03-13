@@ -90,7 +90,7 @@ ssh <username>@12.345.678.90 -i mykeypair.pem
 - We are going to change our SSH port
 ```
 sudo nano /etc/ssh/sshd_config
-# Uncomment the Port 22 and change the number to a random one (i.e., Port 1234
+# Uncomment the Port 22 and change the number to a random one (i.e., Port 1234)
 Port 1234
 ```
 - In the same file, we will disable root login
