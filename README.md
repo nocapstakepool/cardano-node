@@ -30,7 +30,7 @@ So today, we will be building up a Cardano Node on AWS.
 - 1-2 Relay Nodes
 ---
 
-ToC
+### Table of Content
 1. Part 1 - Secure the Node
 2. Part 2 - Set up Pre-reqs
 3. Part 3 - Start the Relay Node
