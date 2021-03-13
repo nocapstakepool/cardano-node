@@ -103,6 +103,8 @@ nano authorized_keys
 <paste your generated public key from earlier>
 ```
 
+
+
 ### Pre-requisites (prereqs.sh) - Creating our file structure
 - Create a tmp directory, change to that tmp directory, install CURL, download the prereq.sh script, and then change it's permissions.
 ```
@@ -114,6 +116,7 @@ chmod 755 prereqs.sh
 ```
 ./prereqs.sh -h
 ```
+
 ```
 Usage: prereqs.sh [-f] [-s] [-i] [-l] [-c] [-w] [-p] [-b <branch>] [-n <mainnet|testnet|launchpad|guild|staging>] [-t <name>] [-m <seconds>]
 Install pre-requisites for building cardano node and using CNTools
