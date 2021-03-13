@@ -75,7 +75,7 @@ sudo ufw status
 - Create the user
 ```
 sudo su  
-adduser <username>  
+sudo adduser <username>  
 <password>  
 <password>  
 <ENTER to leave defaults for user info>  
@@ -83,9 +83,12 @@ adduser <username>
 ```
 - Give that user the power of sudo
 ```
-usermod -aG sudo <username>  
-su - <username>  
-<password if first time using this user>  
+sudo adduser <username> sudo
+```
+- Log on as that new user
+```
+sudo su - <username>
+
 ```
 
 ### Pre-requisites (prereqs.sh) - Creating our file structure
