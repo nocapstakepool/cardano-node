@@ -85,11 +85,15 @@ sudo adduser <username>
 ```
 sudo adduser <username> sudo
 ```
-- Log on as that new user
+- Log on as that new user and we will need to add SSH
 ```
 sudo su - <username>
-
+mkdir ~/.ssh
+cd .ssh
 ```
+- Start by creating a file called authorized_keys and paste in your public key of your SSH
+```
+nano authorized_keys
 
 ### Pre-requisites (prereqs.sh) - Creating our file structure
 - Create a tmp directory, change to that tmp directory, install CURL, download the prereq.sh script, and then change it's permissions.
