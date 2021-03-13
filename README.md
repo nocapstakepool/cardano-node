@@ -38,7 +38,7 @@ So today, we will be building up a Cardano Node on AWS.
 - Save your Private Key (i.e., mykeypair.pem) so that you can connect to it later
 
 ### Connect into your Cardano Node
-- You can choose whatever SSH method you like, I am running on Windows and my command line has SSH configured. Let's SSH into our Ubuntu Server using the server's public IP address and our generate private key (mykeypair.pem) as ubuntu (default AWS account user for Ubuntu)  
+- You can choose whatever SSH method you like, I am running on Windows and my command line has SSH configured. Let's SSH into our Ubuntu Server using the server's public IP address and our generate private key (mykeypair.pem / mykeypair.cer) as ubuntu (default AWS account user for Ubuntu)  
 ```
 ssh ubuntu@12.345.678.90 -i mykeypair.pem  
 yes
@@ -71,7 +71,13 @@ y
 sudo ufw status  
 ```
 
-### Create a non-root user with sudo access (pre-req)
+### Create a non-root user with sudo access and allow it SSH permissions (pre-req)
+- Open up a separate terminal, we will need to generate a public key with the private key.
+```
+cd /PathOfSSHFile
+ssh-keygen -y -f mykeypair.pem
+<copy the ssh-rsa AAAAAABBBBBBCCCC...>
+```
 - Create the user
 ```
 sudo su  
@@ -85,15 +91,17 @@ sudo adduser <username>
 ```
 sudo adduser <username> sudo
 ```
-- Log on as that new user and we will need to add SSH
+- Log on as that new user and we will need to add SSH to your non-root account
 ```
 sudo su - <username>
 mkdir ~/.ssh
 cd .ssh
 ```
-- Start by creating a file called authorized_keys and paste in your public key of your SSH
+- We can add SSH access to our non-root user by adding the public key in a file called authorized_keys
 ```
 nano authorized_keys
+<paste your generated public key from earlier>
+```
 
 ### Pre-requisites (prereqs.sh) - Creating our file structure
 - Create a tmp directory, change to that tmp directory, install CURL, download the prereq.sh script, and then change it's permissions.
