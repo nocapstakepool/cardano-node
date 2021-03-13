@@ -198,11 +198,11 @@ tmux
 - https://www.hamvocke.com/blog/a-quick-and-easy-guide-to-tmux/
 - Since we have no view, let's open a new window and run the gLiveView script
 ```
-<CTRL+B>
-<%>
+<Press CTRL+B>
+<Press %>
 # That will split the panes in half
-<CTRL+B>
-<Press the right key to move to the right pane>
+<Press CTRL+B>
+<Press the right key arrow key to move to the right pane (you can move in between panes with CTRL+B and Left/Right Arrow Key)>
 ./gLiveView.sh
 ```
 - Now we have to our node sync with the entire blockchain (May take a long time depending how large the blockchain is already - a few hours to a day or longer)
