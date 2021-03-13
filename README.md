@@ -30,6 +30,15 @@ So today, we will be building up a Cardano Node on AWS.
 - 1-2 Relay Nodes
 ---
 
+ToC
+1. Part 1 - Secure the Node
+2. Part 2 - Set up Pre-reqs
+3. Part 3 - Start the Relay Node
+4. Part 4 - Create an AMI copy and deploy to AWS for Produce Nodes
+
+---
+## Part 1: Secure the Node
+
 ### Create an EC2 Instance on AWS
 - Create an EC2 instance with Ubuntu (I used Ubuntu Server 20.04 LMS)
 - Select t2.medium and 24-30 GB for EBS Storage
@@ -122,6 +131,9 @@ y
 ```
 sudo ufw status  
 ```
+
+---
+## Part 2 - Set up the Pre-reqs
 
 ### Pre-requisites (prereqs.sh) - Creating our file structure
 - Create a tmp directory, change to that tmp directory, install CURL, download the prereq.sh script, and then change it's permissions.
