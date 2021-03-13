@@ -41,37 +41,15 @@ So today, we will be building up a Cardano Node on AWS.
 - You can choose whatever SSH method you like, I am running on Windows and my command line has SSH configured. Let's SSH into our Ubuntu Server using the server's public IP address and our generate private key (mykeypair.pem / mykeypair.cer) as ubuntu (default AWS account user for Ubuntu)  
 ```
 ssh ubuntu@12.345.678.90 -i mykeypair.pem  
-yes
+<yes>
 ```
 - Once connected, lets update the server!  
 ```
 sudo apt-get update
+sudo apt-get upgrade
 ```
 
-### Secure your Cardano Node
-- Check firewall (ufw) status  
-```
-sudo ufw status  
-```
-- Set your firewall configuration  
-```
-sudo ufw allow proto tcp from any to any port 22  
-```
-- Allow node port  
-```
-sudo ufw allow proto tcp from any to any port 6001  
-```
-- Activate the firewall  
-```
-sudo ufw enable  
-y  
-```
-- Check firewall (ufw) status  
-```
-sudo ufw status  
-```
-
-### Create a non-root user with sudo access and allow it SSH permissions (pre-req)
+### Secure your Node: Create a non-root user with sudo access and allow it SSH permissions
 - Open up a separate terminal, we will need to generate a public key with the private key.
 ```
 cd /PathOfSSHFile
@@ -102,8 +80,48 @@ cd .ssh
 nano authorized_keys
 <paste your generated public key from earlier>
 ```
+- Now let's try connecting to your Cardano Node with the non-root account
+```
+ssh <username>@12.345.678.90 -i mykeypair.pem  
+<yes>
+```
 
+### Secure your Cardano Node: Firewall
+- We are going to change our SSH port
+```
+sudo nano /etc/ssh/sshd_config
+# Uncomment the Port 22 and change the number to a random one (i.e., Port 1234
+Port 1234
+```
+- In the same file, we will disable root login
+```
+# It should look something like:
+# PermitRootLogin prohibit-password
+# We will need to change it to:
+PermitRootLogin no
+```
 
+- Check firewall (ufw) status  
+```
+sudo ufw status  
+```
+- Set your firewall configuration  
+```
+sudo ufw allow proto tcp from any to any port 22  
+```
+- Allow node port  
+```
+sudo ufw allow proto tcp from any to any port 6001  
+```
+- Activate the firewall  
+```
+sudo ufw enable  
+y  
+```
+- Check firewall (ufw) status  
+```
+sudo ufw status  
+```
 
 ### Pre-requisites (prereqs.sh) - Creating our file structure
 - Create a tmp directory, change to that tmp directory, install CURL, download the prereq.sh script, and then change it's permissions.
