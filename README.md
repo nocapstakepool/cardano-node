@@ -231,10 +231,12 @@ cardano-node version
 - Before continuing, please make sure to edit the CNODE_PORT to match what we've set earlier (i.e., port 6001)
 ```
 nano $CNODE_HOME/scripts/env
-```
-```
 CNODE_PORT=6001
+```
+```
+# You will only need to uncomment and provide a name for pool on your block producer node.
 POOL_NAME="MyFirstPool"
+
 <CTRL+X to exit editor>
 <Y to save changes>
 <ENTER to save changes>
