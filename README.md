@@ -196,7 +196,7 @@ Install pre-requisites for building cardano node and using CNTools
 
 ---
 
-## Part 3 - Prep the Cardano Node
+## Part 3 - Prep the Cardano Node Image
 
 ### Setting up your Cardano Node
 - Let's clone the Cardano Node repository and go to the folder
@@ -241,11 +241,16 @@ POOL_NAME="MyFirstPool"
 <Y to save changes>
 <ENTER to save changes>
 ```
+- Now we will create an AMI (backup image) of the Cardano Node to use for future Relay/Producer Nodes
 
 ---
 
 ## Part 4 - Create an AMI copy and deploy to AWS for Produce Nodes
-
+- In the EC2 Dashboard, we will right-click on our EC2 instance > Image and templates > Create image
+- Name your image as CardanoNode
+- Description can be anything
+- Once we have the AMI, we can use it to launch the Relay and Producer Nodes.
+- More Info on the the differences between Relay and Producer nodes here: https://iohk.zendesk.com/hc/en-us/articles/900001951746-What-are-Block-producing-nodes-and-relay-nodes
 
 ---
 
