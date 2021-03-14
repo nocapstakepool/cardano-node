@@ -29,7 +29,7 @@ So today, we will be building up a Cardano Node on AWS.
 ## Table of Content
 1. [Part 1 - Secure the Node](https://github.com/dangitsdavid/cardano-node/blob/main/README.md#part-1-secure-the-node)
 2. [Part 2 - Set up Pre-reqs](https://github.com/dangitsdavid/cardano-node/blob/main/README.md#part-2---set-up-the-pre-reqs)
-3. [Part 3 - Start the Relay Node](https://github.com/dangitsdavid/cardano-node/blob/main/README.md#part-3---start-the-relay-node)
+3. [Part 3 - Prep the Cardano Node](https://github.com/dangitsdavid/cardano-node/blob/main/README.md#part-3---start-the-relay-node)
 4. [Part 4 - Create an AMI copy and deploy to AWS for Produce Nodes](https://github.com/dangitsdavid/cardano-node/blob/main/README.md#part-3---start-the-relay-node)
 
 ## Note: You will need the at least 2-3 servers set up
@@ -196,7 +196,7 @@ Install pre-requisites for building cardano node and using CNTools
 
 ---
 
-## Part 3 - Start the Relay Node
+## Part 3 - Prep the Cardano Node
 
 ### Setting up your Cardano Node
 - Let's clone the Cardano Node repository and go to the folder
@@ -241,10 +241,21 @@ POOL_NAME="MyFirstPool"
 <Y to save changes>
 <ENTER to save changes>
 ```
-- Go to the cnode/scripts directory and run the cnode.sh script to sync the node to the blockchain! We will be using tmux to split the windows so we have more screen estate!
+
+---
+
+## Part 4 - Create an AMI copy and deploy to AWS for Produce Nodes
+
+
+---
+
+## Part 5 - Start the Relay Node
+
+- Go to the cnode/scripts directory and run the cnode.sh or deploy-as-systemd.sh script to sync the node to the blockchain! We will be using tmux to split the windows so we have more screen estate!
 ```
 cd $CNODE_HOME/scripts
 ```
+##$ cnode.sh route
 ```
 tmux
 ./cnode.sh
@@ -252,6 +263,12 @@ tmux
 ```
 - You can read up more about tmux here: 
 - https://www.hamvocke.com/blog/a-quick-and-easy-guide-to-tmux/
+##$ deploy-as-systemd.sh route
+```
+./deploy-as-systemd.sh
+<select Y for Relay Node and N for Core/Block Producer Nodes>
+```
+
 - Since we have no view, let's open a new window and run the gLiveView script
 ```
 <Press CTRL+B>
@@ -265,4 +282,4 @@ tmux
 
 ---
 
-## Part 4 - Create an AMI copy and deploy to AWS for Produce Nodes
+
