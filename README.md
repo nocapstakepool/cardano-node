@@ -95,8 +95,8 @@ ssh <username>@12.345.678.90 -i mykeypair.pem
 <yes>
 ```
 
-### Secure your Cardano Node: Firewall
-- We are going to change our SSH port
+### Secure your Cardano Node: Root User & Firewall
+- We are going to change our SSH port (OPTIONAL)
 ```
 sudo nano /etc/ssh/sshd_config
 # Uncomment the Port 22 and change the number to a random one (i.e., Port 1234)
@@ -109,12 +109,16 @@ Port 1234
 # We will need to change it to:
 PermitRootLogin no
 ```
-
+- We can now delete the ubuntu user since we won't be needing it anymore 
+- (MAKE SURE YOUR NEW USER HAS SUDO ACCESS AND LOGIN WORKS BEFORE DELETING!)
+```
+sudo userdel -r ubuntu
+```
 - Check firewall (ufw) status  
 ```
 sudo ufw status  
 ```
-- Set your firewall configuration  
+- Set your firewall configuration and allow SSH on port 22 (or to whatever previously set as your SSH port)
 ```
 sudo ufw allow proto tcp from any to any port 22  
 ```
@@ -122,10 +126,16 @@ sudo ufw allow proto tcp from any to any port 22
 ```
 sudo ufw allow proto tcp from any to any port 6001  
 ```
-- Activate the firewall  
+- Activate the firewall and restart ssh
 ```
 sudo ufw enable  
-y  
+<y>
+sudo systemctl restart ssh
+```
+- Check that your SSH is running on the right port (when using a different SSH port than port 22)
+```
+sudo systemctl status ssh 
+
 ```
 - Check firewall (ufw) status  
 ```
