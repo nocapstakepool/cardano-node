@@ -159,7 +159,8 @@ Custom TCP              TCP         6001                                0.0.0.0/
 ### Pre-requisites (prereqs.sh) - Creating our file structure
 - Create a tmp directory, change to that tmp directory, install CURL, download the prereq.sh script, and then change it's permissions.
 ```
-mkdir "$HOME/tmp"; cd "$HOME/tmp"
+mkdir "$HOME/tmp"
+cd "$HOME/tmp"
 curl -sS -o prereqs.sh https://raw.githubusercontent.com/cardano-community/guild-operators/master/scripts/cnode-helper-scripts/prereqs.sh
 chmod 755 prereqs.sh
 ```
