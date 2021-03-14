@@ -25,16 +25,16 @@ So today, we will be building up a Cardano Node on AWS.
 3. EDEN Pool's Useful Youtube Videos: https://www.youtube.com/channel/UCZvLM73pSD3aSJv6_Egf8Fg
 
 ---
-## Note: You will need the at least 2-3 servers set up
-- 1 Producer Node
-- 1-2 Relay Nodes
----
 
-### Table of Content
+## Table of Content
 1. Part 1 - Secure the Node
 2. Part 2 - Set up Pre-reqs
 3. Part 3 - Start the Relay Node
 4. Part 4 - Create an AMI copy and deploy to AWS for Produce Nodes
+
+## Note: You will need the at least 2-3 servers set up
+- 1 Producer Node
+- 1-2 Relay Nodes
 
 ---
 ## Part 1: Secure the Node
@@ -133,6 +133,7 @@ sudo ufw status
 ```
 
 ---
+
 ## Part 2 - Set up the Pre-reqs
 
 ### Pre-requisites (prereqs.sh) - Creating our file structure
@@ -173,6 +174,8 @@ Install pre-requisites for building cardano node and using CNTools
 - Now we wait for the prereqs script to run (may take some time - so feel free to go grab a drink)
 
 ---
+
+## Part 3 - Start the Relay Node
 
 ### Setting up your Cardano Node
 - Let's clone the Cardano Node repository and go to the folder
@@ -236,3 +239,7 @@ tmux
 ./gLiveView.sh
 ```
 - Now we have to our node sync with the entire blockchain (May take a long time depending how large the blockchain is already - a few hours to a day or longer)
+
+---
+
+## Part 4 - Create an AMI copy and deploy to AWS for Produce Nodes
