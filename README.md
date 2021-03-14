@@ -142,6 +142,16 @@ sudo systemctl status ssh
 sudo ufw status  
 ```
 
+### Add your Security Group rules for AWS
+- Go to your EC2 Instance and edit it's security group under the EC2 instance's Security tab OR by navigating to the left options bar EC2 > Network & Security > Security Groups
+- We will need to just add inbound rules for:
+```
+# Type                # Protocol   # Port range                         # Source
+SSH (or Custom TCP)     TCP         22 (or different SSH port #)        0.0.0.0/0 (or your own IP address)
+Custom TCP              TCP         6001                                0.0.0.0/0
+```
+- Keep in mind, we only need to create inbound rules because security groups are ttateful, which means that creating inbound rules will automatically create outbound rules
+
 ---
 
 ## Part 2 - Set up the Pre-reqs
