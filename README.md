@@ -27,10 +27,10 @@ So today, we will be building up a Cardano Node on AWS.
 ---
 
 ## Table of Content
-1. Part 1 - Secure the Node
-2. Part 2 - Set up Pre-reqs
-3. Part 3 - Start the Relay Node
-4. Part 4 - Create an AMI copy and deploy to AWS for Produce Nodes
+1. [Part 1 - Secure the Node](https://github.com/dangitsdavid/cardano-node/blob/main/README.md#part-1-secure-the-node)
+2. [Part 2 - Set up Pre-reqs](https://github.com/dangitsdavid/cardano-node/blob/main/README.md#part-2---set-up-the-pre-reqs)
+3. [Part 3 - Start the Relay Node](https://github.com/dangitsdavid/cardano-node/blob/main/README.md#part-3---start-the-relay-node)
+4. [Part 4 - Create an AMI copy and deploy to AWS for Produce Nodes](https://github.com/dangitsdavid/cardano-node/blob/main/README.md#part-3---start-the-relay-node)
 
 ## Note: You will need the at least 2-3 servers set up
 - 1 Producer Node
