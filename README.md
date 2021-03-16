@@ -82,7 +82,7 @@ sudo adduser <username> sudo
 ```
 sudo su - <username>
 mkdir ~/.ssh
-cd .ssh
+cd ~/.ssh
 ```
 - We can add SSH access to our non-root user by adding the public key in a file called authorized_keys
 ```
