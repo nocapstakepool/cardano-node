@@ -287,4 +287,4 @@ tmux
 
 ---
 
-
+## Postponing documentation until I get my stake pool up and running since some info seems to be outdated.
