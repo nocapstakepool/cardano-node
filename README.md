@@ -1,3 +1,5 @@
+# OUTDATE - DO NOT USE
+
 # Cardano-Node
 We are going to build a Cardano Node! 
 
